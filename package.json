@@ -1,0 +1,17 @@
+{
+  "name": "alexaskill2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "alexa-verifier": "^3.0.1",
+    "alexa-verifier-middleware": "^1.0.3",
+    "express": "^4.17.1"
+  }
+}
