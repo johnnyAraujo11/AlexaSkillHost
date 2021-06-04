@@ -1,13 +1,13 @@
 const express = require('express'),
   bodyParser = require('body-parser'),
-  port = process.env.PORT || 3000,
+  port = process.env.PORT || 3030,
   app = express();
 let alexaVerifier = require('alexa-verifier-middleware');
 
 // create a router and attach to express before doing anything else
 var alexaRouter = express.Router();
-app.use('/', alexaRouter)
-//app.use('/alexa', alexaRouter);
+//app.use('/', alexaRouter)
+app.use('/alexa', alexaRouter);
 
 var isFisrtTime = true;
 const SKILL_NAME = 'Disney Heroes';
@@ -40,8 +40,11 @@ function log() {
   }
 }
 
-alexaRouter.post('/disneyheroes', function(req, res) {
+alexaRouter.post('/weather_info', function(req, res) { console.log("oooo") });
 
+
+alexaRouter.post('/disneyheroes', function(req, res) {
+  
   if (req.body.request.type === 'LaunchRequest') {
     res.json(getNewHero());
     isFisrtTime = false
